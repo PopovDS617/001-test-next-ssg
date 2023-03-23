@@ -1,11 +1,11 @@
 const options = {
-  arrowParens: 'avoid',
+  arrowParens: "avoid",
   singleQuote: true,
   bracketSpacing: true,
-  endOfLine: 'lf',
+  endOfLine: "lf",
   tabWidth: 2,
-  trailingComma: 'none',
-  plugins: [require.resolve('prettier-plugin-tailwindcss')]
+  trailingComma: "none",
 };
 
-module.exports = options;
+const plugins = [require.resolve("prettier-plugin-tailwindcss")];
+exports = { options, plugins };
