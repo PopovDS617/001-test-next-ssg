@@ -1,5 +1,5 @@
-import React from 'react';
-import { Header } from '../navigation/Header';
+import React from "react";
+import { Header } from "../navigation/Header";
 
 export const MainLayout = ({ children }) => {
   return (
