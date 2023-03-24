@@ -40,10 +40,14 @@ const FixPage = (props) => {
           </div>
         </div>
         <section className="w-3/4 mx-auto">
+          <p className="mt-10 text-xl">
+            A test/diagnosis isolates one of the following potential fixes:
+          </p>
+          <PotentialFixesList list={wo} />
+
           <h2 className="text-blue-900 text-4xl font-bold my-6  ">
             Other Fixes that either are related or dependent on {title}
           </h2>
-          <PotentialFixesList list={wo} />
           <RelatedLinks list={relatedLinks} />
           <StateList title={title} stateLinks={stateLinks} />
         </section>

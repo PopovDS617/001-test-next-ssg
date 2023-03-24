@@ -1,26 +1,29 @@
 import React from "react";
-
-import Link from "next/link";
-
-import { WrenchIcon } from "../assets/icons/WrenchIcon";
+import { PotentialFixItem } from "./PotentialFixItem";
 
 export const PotentialFixesList = ({ list }) => {
   return (
     <div className="my-10">
-      <ul className="  flex flex-wrap gap-10 justify-start ">
-        {list.map((link) => {
-          if (link.fixslug !== "") {
+      <div className="  grid grid-cols-2 gap-10  ">
+        {list.map((item) => {
+          if (item.fixslug !== "") {
             return (
-              <li
+              <div
                 key={Math.random() * 10}
-                className="flex items-center   text-xl font-bold   gap-2 text-blue-900 hover:text-yellow-400"
+                className="flex p-5 items-start rounded-lg flex-col bg-slate-200   text-xl font-bold   gap-2 text-blue-900  "
               >
-                {link._title}
-              </li>
+                <div className="flex items-center gap-4">
+                  <span className="bg-yellow-500 rounded-full h-4 w-4 text-transparent ">
+                    •
+                  </span>
+                  <span>{item._title}</span>
+                </div>
+                <PotentialFixItem list={item.jobs} />
+              </div>
             );
           }
         })}
-      </ul>
+      </div>
     </div>
   );
 };
