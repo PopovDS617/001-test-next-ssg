@@ -3,13 +3,13 @@ import Link from "next/link";
 
 import axios from "axios";
 
-import { ArticleLayout } from "../components/layout/ArticleLayout";
+import { ArticleLayout } from "../components/layouts/ArticleLayout";
 import { SearchBar } from "../components/search/SearchBar";
-import { LinkList } from "./../components/link-list/LinkList";
+import { LinkList } from "../components/fix-links-list/LinkList";
 
 export default function Home(props) {
   const [listData, setListData] = useState(props.data);
-  console.log(props.data);
+
   const handleSearch = (query) => {
     if (query === "" || query.length === 0) {
       setListData(props.data);

@@ -6,7 +6,7 @@ export const SearchBar = ({ onSearch }) => {
   const handleInput = (e) => {
     const text = e.target.value;
     setInput(text);
-    console.log(text);
+
     onSearch(text);
   };
 
