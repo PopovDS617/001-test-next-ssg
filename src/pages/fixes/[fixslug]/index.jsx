@@ -32,6 +32,7 @@ const FixPage = (props) => {
             sizes="100vw"
             className="w-full h-auto"
             alt={title}
+            quality={70}
           />
           <div className="absolute top-0 flex justify-start w-1/2 items-center h-full bg-blue-900  bg-opacity-60">
             <div className="z-50 text-white text-4xl md:text-7xl       pl-5  ">
