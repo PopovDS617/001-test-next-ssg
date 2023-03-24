@@ -4,17 +4,18 @@ import Head from "next/head";
 
 import axios from "axios";
 
-import { StateList } from "../../../components/state-list/StateList";
-import { ArticleLayout } from "../../../components/layout/ArticleLayout";
-import { RelatedLinks } from "../../../components/related-links/RelatedLinks";
+import { StateList } from "../../../components/state-links-list/StateList";
+import { ArticleLayout } from "../../../components/layouts/ArticleLayout";
+import { RelatedLinks } from "../../../components/related-links-list/RelatedLinks";
+import { PotentialFixesList } from "../../../components/potential-fixes-list/PotentialFixesList";
 
 const FixPage = (props) => {
   const {
     allStateLinks: stateLinks,
     relatedLinks,
-    fix: { headerImageSrc: imageSrc, fixTitle: title },
+    fix: { headerImageSrc: imageSrc, fixTitle: title, wo },
   } = props.data;
-  console.log(props.data);
+
   return (
     <ArticleLayout>
       <Head>
@@ -24,14 +25,16 @@ const FixPage = (props) => {
         <div className="relative  h-full">
           <Image
             src={imageSrc}
+            priority="true"
+            loading="eager"
             width="0"
             height="0"
             sizes="100vw"
             className="w-full h-auto"
             alt={title}
           />
-          <div className="absolute top-0 flex justify-start w-1/2 items-center h-full">
-            <div className="z-50 text-white text-4xl md:text-7xl   pl-5">
+          <div className="absolute top-0 flex justify-start w-1/2 items-center h-full bg-blue-900  bg-opacity-60">
+            <div className="z-50 text-white text-4xl md:text-7xl       pl-5  ">
               {title}
             </div>
           </div>
@@ -40,6 +43,7 @@ const FixPage = (props) => {
           <h2 className="text-blue-900 text-4xl font-bold my-6  ">
             Other Fixes that either are related or dependent on {title}
           </h2>
+          <PotentialFixesList list={wo} />
           <RelatedLinks list={relatedLinks} />
           <StateList title={title} stateLinks={stateLinks} />
         </section>
